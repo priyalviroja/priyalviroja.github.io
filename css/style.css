@@ -36,8 +36,10 @@ html,body{
 
 }
 #particles{
-    background:radial-gradient(#009900,#000000);
-    background:-webkit-radial-gradient(#009900,#000000);
+	backgorund-color:#000;
+	backgorund:url('image/bg.jpg') center center 100% 100%;
+    //background:radial-gradient(#009900,#000000);
+   // background:-webkit-radial-gradient(#009900,#000000);
 }
 .page{
     position:absolute;
