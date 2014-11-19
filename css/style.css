@@ -13,7 +13,7 @@ and open the template in the editor.
     padding:0px;
     font-size:1em;
     color: #fff;
-    font-family:'Calibri';
+    font-family: "Shadows Into Light", Helvetica, Arial, sans-serif;
     font-size:14px;
     font-weight:lighter;
     text-shadow:2px 2px 0px #000;
@@ -36,11 +36,11 @@ html,body{
 
 }
 #particles{
-	background-color:#000;
-	background-image:url('../image/bg.jpg');
-	background-attachment:fixed;
-	background-size:100% 100%;
-	background-position:center center;
+    background-color:#000;
+    background-image:url('../image/bg.jpg');
+    background-attachment:fixed;
+    background-size:100% 100%;
+    background-position:center center;
     //background:radial-gradient(#009900,#000000);
     //background:-webkit-radial-gradient(#009900,#000000);
 }
@@ -52,9 +52,18 @@ html,body{
     bottom:auto;
     z-index:11111;
 }
+
+.logo{
+    position:absolute;
+    right:6%;
+    top:10px;
+    margin:0 auto;
+    display:block;
+}
+
 h1,h2,h3,h4{
     text-align:center;
-    font-family: 'Nothing You Could Do', cursive;
+   
 }
 h1{
     font-size:1em;
@@ -73,13 +82,12 @@ h4{
 .word {
     position:relative;
     margin:80px auto;
-    margin-left:30%;
     text-shadow: 0 0 10px rgba(50, 255, 50, 0.5), 0 0 5px rgba(100, 255, 100, 0.5);
 }
 
 .word span {
-    font-family: 'Nothing You Could Do', cursive;
-    font-size:6em;
+    
+    font-size:4em;
     display: inline-block;
     transform: translateX(100%) scale(0.9);
     transition: transform 500ms;
@@ -100,3 +108,45 @@ h4{
     left:0px;
     right: 0px;
 }
+
+.progress-bar-container {
+    width:80%;
+    height:110px;
+    background: url('../image/progress-container.png');
+    background-size:100% 100%;
+    background-position:center center;
+}
+
+.progress-bar {
+    height:40px;
+    background:#72dbf1 url('../image/progress-bar.png');
+    position: absolute;
+    margin-left:16px;
+    margin-top:16px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+}
+
+.launch-day-hat {
+    background: url(../image/launch-day-hat.png) no-repeat;
+    width: 120px;
+    height: 160px;
+    position:absolute;
+    margin-left:76%;
+    margin-top:-260px;
+}
+
+.launch-day {
+    background: url(../image/launch-day.png) no-repeat;
+    width: 112px;
+    height: 110px;
+   
+}
+
+
+
+a{
+    cursor:pointer;
+}
+
+
