@@ -1,0 +1,51 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 19 Nov, 2014, 12:19:39 PM
+    Author     : PRIYAL
+*/
+
+@media (max-width:1600px){
+
+}
+@media (max-width:1366px){
+
+}
+@media (max-width:1280px){
+
+}
+@media (max-width:1024px){
+
+}
+@media (max-width:768px){
+
+    h1{
+        font-size:1em;
+    }
+    h2{
+        font-size:1.5em;
+    }
+
+    h3{
+        font-size:2em;
+    }
+
+    h4{
+        font-size:3em;
+    }
+
+    .word span {
+        font-family: 'Nothing You Could Do', cursive;
+        font-size:2em;
+    }
+}
+@media (max-width:480px){
+
+}
+@media (max-width:322px){
+
+
+}

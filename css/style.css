@@ -1,0 +1,97 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 19 Nov, 2014, 12:13:56 PM
+    Author     : PRIYAL
+*/
+
+*{
+    margin:0px;
+    padding:0px;
+    font-size:1em;
+    color: #fff;
+    font-family:'Calibri';
+    font-size:14px;
+    font-weight:lighter;
+    text-shadow:2px 2px 0px #000;
+    margin: 0 0 0 0;
+}
+
+html,body{ 
+    height:100% !important;
+    min-height:100% !important;
+    max-height:100% !important;
+}
+
+#particles{
+    position:fixed;
+    left:0px;
+    right:0px;
+    top:0px;
+    bottom:0px;
+    padding:0px;
+
+}
+#particles{
+    background:radial-gradient(#009900,#000000);
+    background:-webkit-radial-gradient(#009900,#000000);
+}
+.page{
+    position:absolute;
+    top:0px;
+    left:0px;
+    right:0px;
+    bottom:auto;
+    z-index:11111;
+}
+h1,h2,h3,h4{
+    text-align:center;
+    font-family: 'Nothing You Could Do', cursive;
+}
+h1{
+    font-size:1em;
+}
+h2{
+    font-size:2em;
+}
+h3{
+    font-size:3em;
+}
+h4{
+    font-size:4em;
+}
+
+
+.word {
+    position:relative;
+    margin:80px auto;
+    margin-left:30%;
+    text-shadow: 0 0 10px rgba(50, 255, 50, 0.5), 0 0 5px rgba(100, 255, 100, 0.5);
+}
+
+.word span {
+    font-family: 'Nothing You Could Do', cursive;
+    font-size:6em;
+    display: inline-block;
+    transform: translateX(100%) scale(0.9);
+    transition: transform 500ms;
+}
+
+.word .done {
+    color: #6f6;
+    transform: translateX(0) scale(1);
+}
+
+.overlay {
+    position:fixed;
+    background-image: linear-gradient(transparent 0%, rgba(10, 16, 10, 0.5) 50%);
+    background-size:1000px 2px;
+    top:0px;
+    bottom: 0px;
+    content: '';
+    left:0px;
+    right: 0px;
+}
