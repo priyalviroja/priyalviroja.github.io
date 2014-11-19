@@ -81,7 +81,7 @@ h4{
 
 .word {
     position:relative;
-    margin:80px auto;
+    margin:10px auto;
     text-shadow: 0 0 10px rgba(50, 255, 50, 0.5), 0 0 5px rgba(100, 255, 100, 0.5);
 }
 
