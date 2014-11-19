@@ -153,4 +153,14 @@ a{
     cursor:pointer;
 }
 
+.contact-me{
+    background-image: url(../image/contact-me.png);
+    background-position:center center;
+    width: 120px;
+    height: 120px;
+    position:absolute;
+    margin-top:-80px;
+    margin-left:-60px;
+}
+
 
