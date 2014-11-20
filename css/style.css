@@ -163,4 +163,13 @@ a{
     margin-left:-60px;
 }
 
-
+.credits{
+     {
+    color: #fff;
+    font-family: "Shadows Into Light",Helvetica,Arial,sans-serif;
+    font-size: 4em;
+    font-weight: lighter;
+    text-shadow: 2px 2px 0 #000;
+}
+    
+}
