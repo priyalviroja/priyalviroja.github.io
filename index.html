@@ -18,7 +18,6 @@ and open the template in the editor.
 
         <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 
-        <script src="js/jquery.lettering.min.js"></script>
         
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -32,7 +31,6 @@ and open the template in the editor.
 
     </head>
     <body>
-        <div id="particles"></div>
         <div class="page">
             <center>
                 <section>
@@ -46,11 +44,6 @@ and open the template in the editor.
                     <h3>I Hack, I Break, I Automate AND I Report </h3>
                     <br>
                     <h2>Unfortunately, I'm not quite ready yet. But, see my progress below:</h2>
-                </section>
-                <section>
-
-                    <div class="overlay"></div>
-                    <div class="word">Coming Soon...</div>
                 </section>
                 <section>
                     <section class="progress">
@@ -69,130 +62,5 @@ and open the template in the editor.
                 </section>
             </center>
         </div>
-
-        <script src="js/particles.min.js"></script>
-
-        <script type="text/javascript">
-
-            particlesJS('particles', {
-                particles: {
-                    color: '#fff',
-                    shape: 'circle',
-                    opacity: 0.6,
-                    size: 6.5,
-                    size_random: true,
-                    nb: 100,
-                    line_linked: {
-                        enable_auto: true,
-                        distance: 250,
-                        color: '#fff',
-                        opacity: 0.5,
-                        width: 1,
-                        condensed_mode: {
-                            enable: false,
-                            rotateX: 600,
-                            rotateY: 600
-                        }
-                    },
-                    anim: {
-                        enable: true,
-                        speed: 2
-                    }
-                },
-                interactivity: {
-                    enable: true,
-                    mouse: {
-                        distance: 200
-                    },
-                    mode: 'grab'
-                },
-                retina_detect: true
-            });
-
-        </script>
-
-        <script type="text/javascript">
-            function Ticker(elem) {
-                elem.lettering();
-                this.done = false;
-                this.cycleCount = 5;
-                this.cycleCurrent = 0;
-                this.chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()-_=+{}|[]\\;\':"<>?,./`~'.split('');
-                this.charsCount = this.chars.length;
-                this.original = elem.html();
-                this.letters = elem.find('span');
-                this.letterCount = this.letters.length;
-                this.letterCurrent = 0;
-
-                this.letters.each(function () {
-                    var $this = $(this);
-                    $this.attr('data-orig', $this.text());
-                    $this.text('-');
-                });
-            }
-
-            Ticker.prototype.getChar = function () {
-                return this.chars[ Math.floor(Math.random() * this.charsCount) ];
-            };
-
-            Ticker.prototype.reset = function () {
-                this.done = false;
-                this.cycleCurrent = 0;
-                this.letterCurrent = 0;
-                this.letters.each(function () {
-                    var $this = $(this);
-                    $this.text($this.attr('data-orig'));
-                    $this.removeClass('done');
-                });
-                this.loop();
-            };
-
-            Ticker.prototype.loop = function () {
-                var self = this;
-
-                this.letters.each(function (index, elem) {
-                    var $elem = $(elem);
-                    if (index >= self.letterCurrent) {
-                        if ($elem.text() !== ' ') {
-                            $elem.text(self.getChar());
-                            $elem.css('opacity', Math.random());
-                        }
-                    }
-                });
-
-                if (this.cycleCurrent < this.cycleCount) {
-                    this.cycleCurrent++;
-                } else if (this.letterCurrent < this.letterCount) {
-                    var currLetter = this.letters.eq(this.letterCurrent);
-                    this.cycleCurrent = 0;
-                    currLetter.text(currLetter.attr('data-orig')).css('opacity', 1).addClass('done');
-                    this.letterCurrent++;
-                } else {
-                    this.done = true;
-                }
-
-                if (!this.done) {
-                    requestAnimationFrame(function () {
-                        self.loop();
-                    });
-                } else {
-                    var self = this;
-                    setTimeout(function () {
-                        self.reset();
-                    }, 750);
-                }
-            };
-
-            $words = $('.word');
-
-            $words.each(function () {
-                var $this = $(this),
-                        ticker = new Ticker($this).reset();
-                $this.data('ticker', ticker);
-            });
-
-        </script>
-
-
     </body>
 </html>

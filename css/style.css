@@ -26,24 +26,13 @@ html,body{
     max-height:100% !important;
 }
 
-#particles{
-    position:fixed;
-    left:0px;
-    right:0px;
-    top:0px;
-    bottom:0px;
-    padding:0px;
-
-}
-#particles{
-    background-color:#000;
+body{
+ background-color:#000;
     background-image:url('../image/bg.jpg');
     background-attachment:fixed;
     background-size:100% 100%;
-    background-position:center center;
-    //background:radial-gradient(#009900,#000000);
-    //background:-webkit-radial-gradient(#009900,#000000);
-}
+    background-position:center center;}
+
 .page{
     position:absolute;
     top:0px;
@@ -117,6 +106,7 @@ p{
 
 .progress-bar-container {
     width:80%;
+	margin-top:180px;
     height:110px;
     background: url('../image/progress-container.png');
     background-size:100% 100%;
