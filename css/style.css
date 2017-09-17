@@ -51,12 +51,12 @@ body{
     display:block;
 }
 
-.content {
+.blog-link {
   padding: 15px;
   opacity: 0.75;
 }
 
-.content a {
+.blog-link a {
   color: #50dcab;
   text-decoration: none;
   border: 2px solid #50dcab;
