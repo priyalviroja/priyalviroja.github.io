@@ -52,20 +52,21 @@ body{
 }
 
 .blog-link {
+  position:absolute;
+  left:6%;
+  top:10px;
+  margin:0 auto;
   padding: 15px;
   opacity: 0.75;
 }
 
 .blog-link a {
-  color: #50dcab;
+  color: #6f6;;
   text-decoration: none;
-  border: 2px solid #50dcab;
-  padding: 5px;
+  border: 3px solid #6f6;
+  padding: 10px;
   text-align: center;
   cursor: pointer;
-  float: left;
-  margin-right: 75%;
-  margin-bottom: 5px;
 }
 
 h1,h2,h3,h4{
