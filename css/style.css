@@ -56,18 +56,17 @@ body{
   left:6%;
   top:10px;
   margin:0 auto;
-  padding: 15px;
   opacity: 0.75;
-  font-size:3em;
 }
 
 .blog-link a {
   color: #6f6;;
   text-decoration: none;
-  border: 3px solid #6f6;
-  padding: 10px;
+  border: 5px solid #6f6;
+  padding: 20px;
   text-align: center;
   cursor: pointer;
+  font-size:3em;
 }
 
 h1,h2,h3,h4{
