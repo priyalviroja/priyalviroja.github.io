@@ -51,14 +51,15 @@ body{
     display:block;
 }
 
-.blog-link {
+.blog-link{
   position:absolute;
   left:6%;
   top:10px;
   margin:0 auto;
+  display:block;
 }
 
-.blog-link a {
+.blog-link a{
   color: #6f6;;
   text-decoration: none;
   border: 5px solid #6f6;
