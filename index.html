@@ -1,61 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Priyal Viroja | Security Engineer</title>
+    <title>Priyal Viroja | AI-infused Security Engineer</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Modern Typography -->
+    <!-- Font Loads -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.gstatic.com/s/%23google-fonts%23/css2?=family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
     
     <link type="text/css" href="css/modern.css" rel="stylesheet"/>
 
-    <!-- Dependencies -->
+    <!-- Core Scripts -->
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="js/jquery.lettering.min.js"></script>
 
 </head>
 <body>
 
-    <nav class="container" style="padding: 2rem 0; justify-content: space-between; background: rgba(10,10,12,0.8); backdrop-filter: blur(10px); position: sticky; top:0; z-index: 100;">
+    <nav class="container">
         <div style="display: flex; align-items: center; gap: 1rem;">
-            <img class="logo" src="image/logo.png" alt="Logo">
-            <span style="font-weight: bold; font-size: 1.2rem;">Priyal Viroja</span>
+            <img class="logo" src="image/logo.png" alt="Logo" style="width:40px;">
+            <span style="font-weight: bold; Font-family: var(--Font-Mono);">PRIYAL_VIROJA</span>
         </div>
-        <a href="https://priyalviroja.in" class="Btn" style="padding: 0.5rem 1rem; border: 1px solid var(--accent-secondary);">Blog</a>
+        <a href="https://priyalviroja.in" class="Btn">BLOG</a>
     </nav>
 
     <main class="container">
         
         <section class="hero">
-            <h1 style="margin-top: 2rem;">Priyal Viroja</h1>
-            <h2 style=" color: var(--accent-secondary); margin-bottom: 1.5rem;">Security Engineering @ Gojek</h2>
-            <p class="tagline">I Hack, I Break, I Automate (AND I Report).</p>
+            <h1>Priyal Viroja</h1>
+            <h2>AI-infused Security Engineer & Vulnerability Tinkerer</h2>
+        </section>
+
+        <section class="bio-intro">
+            Over a decade of experience, primarily focused on **VAPT**, Architecture Reviews, **Security Engineering**, DevSecOps, Information Security Compliances, and **Vulnerability Research**. 
+            <br><br>
+            Worked with startups and fast-growing companies, leading teams and initiatives to embed security from the ground up.
+        </section>
+
+        <section class="expertise-grid">
+            <div class="skill-card">
+                <h3>[ VAPT & RESEARCH ]</h3>
+                <p>Specialized in Vulnerability Research and penetration testing frameworks to identify critical leaks before they become liabilities.</p>
+            </div>
+            <div class="skill-card">
+                <h3>[ ARCHITECTURE & DEVSEC]</h3>
+                <p>Embedding security into the lifecycle: Architecture reviews, DevSecOps integration, and Compliance engineering for fast-growing startups.</p>
+            </div>
+            <div class="skill-card">
+                <h3>[ IoT THREAT MODELING ]</h3>
+                <p>Threat modeling for the Internet of Things (IoT) landscape, ensuring connected devices stay secure against remote exploitation.</p>
+            </div>
         </section>
 
         <section class="ticker-area">
-             <div class="word" id="dynamic-status"></div>
+             <div class="word" id="status-tracker"></div>
         </section>
 
         <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 4rem 0; width: 80%;">
 
-        <section class="socials CTA">
-            <p style="margin-bottom: 2rem;">Get in touch or check my work:</p>
-            <div class="links">
-                <a href="https://twitter.com/priyalviroja" target="_blank" class="Btn">Twitter</a>
-                <a href="https://www.linkedin.com/pub/priyal-viroja/64/490/a25" target="_blank" class="Btn">LinkedIn</a>
-                <a href="https://github.com/priyalviroja/" target="_blank" class="Btn">GitHub</a>
+        <section class="Actions">
+            <div class="links-footer">
+                <a href="https://twitter.com/priyalviroja" target="_blank" class="Btn">TWITTER</a>
+                <a href="https://www.linkedin.com/pub/priyal-viroja/64/490/a25" target="_blank" class="Btn">LINKEDIN</a>
+                <a href="https://github.com/priyalviroja/" target="_blank" class="Btn">GITHUB_REPOSITORYS</a>
             </div>
         </section>
 
         <footer>
-            <p>Built with 💙 by <a href="https://github.com/priyalviroja/" style="color: var(--accent-primary);">Priyal Viroja</a></p>
+            <p>Authenticated & Built with 🧡 by <a href="https://github.com/priyalviroja/" style="color: var(--accent-primary);">Priyal Viroja</a></p>
         </footer>
 
     </main>
 
     <script type="text/javascript">
-        // Preserving your classic Ticker logic but targeting the new ID
+        // Preservation of your unique Ticker logic
         function Ticker(elem) {
             elem.lettering();
             this.done = false;
@@ -92,7 +112,7 @@
         };
 
         Ticker.prototype.loop = function () {
-            var self = this;
+           var self = this;
 
             this.letters.each(function (index, elem) {
                 var $elem = $(elem);
@@ -128,9 +148,9 @@
         };
 
         $(document).ready(function() {
-          var $words = $('#dynamic-status');
-          // Initialize with some sample text for the ticker to eat
-          $words.html('<span style="color:#1ff042">SYSTEM READY [AUTHENTICATED]</span>');
+          var $words = $('#status-tracker');
+          // Initialize with a rotating status message
+          $words.html('<span style="color:#1ff042">SYSTEM_ACTIVE [AUTHENTICATED]</span>');
           
           $words.each(function () {
             var $this = $(this),

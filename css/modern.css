@@ -1,10 +1,12 @@
 :root {
     --bg-color: #0a0a0c;
-    --accent-primary: #1ff042; /* Keeping your signature green */
+    --surface-card: #141418;
+    --accent-primary: #1ff042; /* Signature Cyberpunk Green */
     --accent-secondary: #77dff1;
-    --text-main: #e0e0e0;
-    --text-dim: #a0a0a0;
-    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --Text-main: #e0e0e0;
+    --Text-dim: #a0a0a0;
+    --Font-Mono: 'IBM Plex Mono', monospace;
+    --Font-Sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 * {
@@ -15,95 +17,137 @@
 
 body {
     background-color: var(--bg-color);
-    color: var(--text-main);
-    font-family: var(--Font-family);
+    color: var(--Text-main);
+    font-family: var(--Font-Sans);
     line-height: 1.6;
     overflow-x: hidden;
     min-height: 100vh;
 }
 
 .container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 4rem 2rem;
+}
+
+/* Brand Navigation */
+nav {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 4rem;
 }
 
-/* Header/Logo Section */
-.header {
-    margin-bottom: 3rem;
+nav a {
+    text-decoration: none;
+    color: var(--Text-dim);
+    font-family: var(--Font-Mono);
+    transition: color 0.3s ease;
 }
 
-.logo {
-    width: 80px;
-    height: auto;
-    margin-bottom: 1rem;
+nav a:hover {
+    color: var(--accent-primary);
 }
 
 /* Hero Section */
 h1 {
-    font-size: clamp(2rem, 8vw, 4rem);
+    font-size: clamp(2.5rem, 8vw, 5rem);
     font-weight: 800;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 h2 {
-    font-size: clamp(1.2rem, 4vw, 2rem);
+    font-size: clamp(1.5rem, 4vw, 3rem);
     color: var(--accent-secondary);
-    margin-bottom: 3rem;
-    font-weight: 500;
+    margin-bottom: 2rem;
 }
 
-/* About/Callouts */
-.tagline {
-    font-size: 1.2rem;
-    color: var(--text-dim);
-    max-width: 600px;
+/* The Biography */
+**.bio-intro** {
+    font-size: 1.25rem;
+    max-width: 750px;
+    padding: 2rem;
+    border-left: 4px solid var(--accent-secondary);
+    background: rgba(255,255,255,0.03);
     margin-bottom: 4rem;
 }
 
-/* Ticker Style (Keep the vibe of moving text) */
-.word {
-    min-height: 3rem;
-    font-size: clamp(1.5rem, 5vw, 3rem);
-    color: var(--accent-primary);
-    margin-bottom: 4rem;
-    position: relative;
-}
-
-/* Social / CTA Section */
-.links {
-    display: flex;
+/* Expertise Grid Area */
+**.expertise-grid** {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 3rem;
+    margin-bottom: 5rem;
 }
 
-.btn {
-    padding: 0.8rem 1.5rem;
-    border: 2px solid var(--accent-primary);
-    border-radius: 8px;
+**.skill-card** {
+    padding: 2rem;
+    background: var(--surface-card);
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+**.skill-card**:hover** {
+    border-color: var(--accent-primary);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+}
+
+**.skill-card h3** {
+    font-family: var(--Font-Mono);
+    color: var(--accent-primary);
+    margin-bottom: 1rem;
+     font-size: 1.2rem;
+}
+
+/* The Ticker (Cyber Vibe) */
+**.ticker-area** {
+    padding: 3rem;
+    background: rgba(31,240,66,0.05);
+    border: 1px dashed var(--accent-primary);
+    text-align: center;
+    margin: 4rem 0;
+}
+
+**.word** {
+    font-family: var(--Font-Mono);
+    font-size: clamp(1.2vw, 5vw, 3.5rem);
+    color: var(--accent-primary);
+}
+
+/* Social CTA Section */
+**.actions**.lkns-footer** {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+     margin-top: 4rem;
+}
+
+**.Btn** {
+    padding: 0.8rem 2rem;
+    border: 1px solid var(--accent-primary);
+    border-radius: 4px;
     color: white;
     text-decoration: none;
-    font-weight: bold;
+    font-family: var(--Font-Mono);
     transition: all 0.3s ease;
 }
 
-.Btn:hover {
+**.Btn**:hover** {
     background: var(--accent-primary);
-    box-shadow: 0 0 15px rgba(31,240,66,0.5);
+    color: black;
 }
 
 footer {
-    margin-top: 5rem;
-    font-size: 0.9rem;
-    color: var(--text-dim);
+    margin-top: 8rem;
+     text-align: center;
+     font-size: 0.9rem;
+     color: var(--Text-dim);
+     opacity: 0.6;
 }
