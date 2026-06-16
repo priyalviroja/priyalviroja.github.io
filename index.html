@@ -77,19 +77,39 @@
                     <p>Worked with startups and fast-growing companies, leading teams and initiatives to embed security from the ground up.</p>
                     <p>In my spare time, I enjoy hunting for security bugs and keeping up with the digital evolution and hacker culture. On the whole, I work with anything that revolves around security landscape.</p>
                 </div>
-                <div class="companies-worked" id="career-timeline">
+                <div class="career-trajectory" id="career-timeline">
                     <span class="sys-label">// CAREER_TRAJECTORY:</span>
-                    <span class="company-tag timeline-node glitch-hover" data-text="WINGIFY">WINGIFY</span>
-                    <span class="timeline-arrow">></span>
-                    <span class="company-tag timeline-node glitch-hover" data-text="K7 COMPUTING">K7 COMPUTING</span>
-                    <span class="timeline-arrow">></span>
-                    <span class="company-tag timeline-node glitch-hover" data-text="HUBBLE">HUBBLE</span>
-                    <span class="timeline-arrow">></span>
-                    <span class="company-tag timeline-node glitch-hover" data-text="POSTMAN">POSTMAN</span>
-                    <span class="timeline-arrow">></span>
-                    <span class="company-tag timeline-node glitch-hover" data-text="GOJEK">GOJEK</span>
-                    <span class="timeline-arrow">></span>
-                    <span class="company-tag timeline-node current-node glitch-hover" data-text="TEKION">TEKION</span>
+                    <div class="trajectory-grid">
+                        <div class="trajectory-entry timeline-node">
+                            <span class="company-tag glitch-hover" data-text="WINGIFY">WINGIFY</span>
+                            <span class="entry-tagline">internship — breaking SaaS & building scanners</span>
+                        </div>
+                        <span class="timeline-arrow">›</span>
+                        <div class="trajectory-entry timeline-node">
+                            <span class="company-tag glitch-hover" data-text="K7 COMPUTING">K7 COMPUTING</span>
+                            <span class="entry-tagline">pentesting, web security research, malware world discovery</span>
+                        </div>
+                        <span class="timeline-arrow">›</span>
+                        <div class="trajectory-entry timeline-node">
+                            <span class="company-tag glitch-hover" data-text="HUBBLE">HUBBLE</span>
+                            <span class="entry-tagline">IoT smart baby monitors — tinkering & fixing</span>
+                        </div>
+                        <span class="timeline-arrow">›</span>
+                        <div class="trajectory-entry timeline-node">
+                            <span class="company-tag glitch-hover" data-text="POSTMAN">POSTMAN</span>
+                            <span class="entry-tagline">all things security</span>
+                        </div>
+                        <span class="timeline-arrow">›</span>
+                        <div class="trajectory-entry timeline-node">
+                            <span class="company-tag glitch-hover" data-text="GOJEK">GOJEK</span>
+                            <span class="entry-tagline">software supply chain & infra security</span>
+                        </div>
+                        <span class="timeline-arrow">›</span>
+                        <div class="trajectory-entry timeline-node current-node">
+                            <span class="company-tag glitch-hover" data-text="TEKION">TEKION</span>
+                            <span class="entry-tagline">architecting security for scale & growth</span>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -199,22 +219,21 @@
         }
 
         // --- Career Timeline Animation ---
-        const timelineElements = document.querySelectorAll('#career-timeline > span');
+        const timelineElements = document.querySelectorAll('.trajectory-grid > *');
         const timelineObserver = new IntersectionObserver((entries) => {
             if(entries[0].isIntersecting) {
-                // Ignore the sys-label, animate nodes and arrows
                 let delay = 0;
                 timelineElements.forEach((el) => {
                     if (el.classList.contains('timeline-node') || el.classList.contains('timeline-arrow')) {
                         setTimeout(() => {
                             el.classList.add('lit-up');
                         }, delay);
-                        delay += 250; // 250ms between each node/arrow lighting up
+                        delay += 300;
                     }
                 });
                 timelineObserver.disconnect();
             }
-        }, { threshold: 0.8 });
+        }, { threshold: 0.5 });
         
         if(document.getElementById('career-timeline')) {
             timelineObserver.observe(document.getElementById('career-timeline'));

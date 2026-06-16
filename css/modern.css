@@ -291,12 +291,20 @@ html {
     margin-bottom: 1.5rem;
 }
 
-.companies-worked {
+.career-trajectory {
     margin-top: 3rem;
+}
+
+.career-trajectory > .sys-label {
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+.trajectory-grid {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 1rem;
+    gap: 0.8rem;
 }
 
 .sys-label {
@@ -308,16 +316,24 @@ html {
 .timeline-arrow {
     color: var(--fg-dim);
     font-weight: 900;
-    font-size: 1.2rem;
-    opacity: 0.2;
-    transition: opacity 0.3s, color 0.3s, transform 0.3s;
+    font-size: 1.4rem;
+    opacity: 0;
+    transition: opacity 0.4s, color 0.3s, transform 0.3s;
+    align-self: center;
 }
 
 .timeline-arrow.lit-up {
     opacity: 1;
     color: var(--accent-magenta);
     text-shadow: 0 0 8px var(--accent-magenta);
-    transform: scale(1.2);
+    transform: scale(1.3);
+}
+
+.trajectory-entry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
 }
 
 .company-tag {
@@ -329,12 +345,24 @@ html {
     text-transform: uppercase;
     cursor: default;
     background: rgba(204, 255, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.entry-tagline {
+    font-size: 0.65rem;
+    color: var(--fg-dim);
+    text-align: center;
+    max-width: 160px;
+    line-height: 1.3;
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: opacity 0.5s 0.2s, transform 0.5s 0.2s;
 }
 
 .timeline-node {
-    opacity: 0.2;
+    opacity: 0.15;
     filter: grayscale(100%);
-    transition: opacity 0.3s, filter 0.3s, transform 0.2s, box-shadow 0.3s;
+    transition: opacity 0.4s, filter 0.4s, transform 0.3s, box-shadow 0.3s;
 }
 
 .timeline-node.lit-up {
@@ -344,12 +372,24 @@ html {
     box-shadow: 0 5px 15px rgba(204, 255, 0, 0.1);
 }
 
+.timeline-node.lit-up .entry-tagline {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .timeline-node.current-node.lit-up {
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+    animation: pulseGlow 2s infinite alternate;
+}
+
+.timeline-node.current-node.lit-up .company-tag {
     border-color: var(--accent-cyan);
     color: var(--accent-cyan);
     background: rgba(0, 255, 255, 0.05);
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
-    animation: pulseGlow 2s infinite alternate;
+}
+
+.timeline-node.current-node.lit-up .entry-tagline {
+    color: var(--accent-cyan);
 }
 
 @keyframes pulseGlow {
