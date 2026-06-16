@@ -1,163 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Priyal Viroja | AI-infused Security Engineer</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Font Loads -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.gstatic.com/s/%23google-fonts%23/css2?=family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <title>PRIYAL - SEC_ENG</title>
     
-    <link type="text/css" href="css/modern.css" rel="stylesheet"/>
-
-    <!-- Core Scripts -->
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="js/jquery.lettering.min.js"></script>
-
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=JetBrains+Mono:wght@400;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/modern.css">
 </head>
-<body>
+<body class="twisted-theme">
+    
+    <!-- Corrupted Memory Canvas -->
+    <canvas id="corruption-canvas"></canvas>
 
-    <nav class="container">
-        <div style="display: flex; align-items: center; gap: 1rem;">
-            <img class="logo" src="image/logo.png" alt="Logo" style="width:40px;">
-            <span style="font-weight: bold; Font-family: var(--Font-Mono);">PRIYAL_VIROJA</span>
-        </div>
-        <a href="https://priyalviroja.in" class="Btn">BLOG</a>
-    </nav>
+    <!-- CRT Overlays -->
+    <div class="scanlines"></div>
+    <div class="vignette"></div>
 
-    <main class="container">
+    <div class="grid-layout">
+        <!-- Sidebar Navigation -->
+        <nav class="side-nav">
+            <div class="nav-branding glitch" data-text="PRIYAL">PRIYAL</div>
+            <div class="nav-status">
+                <span class="status-dot"></span>
+                <span class="decrypt-text">SYS_ONLINE</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about" class="glitch-hover" data-text="//01_ABOUT">//01_ABOUT</a></li>
+                <li><a href="#expertise" class="glitch-hover" data-text="//02_EXPERTISE">//02_EXPERTISE</a></li>
+                <li><a href="#console" class="glitch-hover" data-text="//03_CONSOLE">//03_CONSOLE</a></li>
+                <li><a href="https://priyalviroja.in" target="_blank" class="glitch-hover" data-text="//04_BLOG">//04_BLOG</a></li>
+            </ul>
+            <div class="nav-footer decrypt-text">
+                <br>PORT 8080<br>SEC_ENG
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-decorative">
+                    <a href="https://github.com/priyalviroja/" target="_blank" class="dec-line decrypt-text glitch-hover link-blend" data-text="> SYS.GITHUB">> SYS.GITHUB</a>
+                    <a href="https://linkedin.com/in/priyalviroja" target="_blank" class="dec-line decrypt-text glitch-hover link-blend" data-text="> SYS.LINKEDIN">> SYS.LINKEDIN</a>
+                    <span class="dec-line decrypt-text">SYS.CORE.INIT</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    <div class="intro-massive decrypt-text">// I'M PRIYAL.</div>
+                    <div class="glitch massive-text" data-text="I BREAK">I BREAK</div>
+                    <div class="glitch massive-text outline-text" data-text="SYSTEMS &">SYSTEMS &</div>
+                    <div class="glitch massive-text" data-text="ASSUMPTIONS,">ASSUMPTIONS,</div>
+                </h1>
+                
+                <div class="hero-subtitle-block">
+                    <div class="subtitle-accent"></div>
+                    <p class="decrypt-text">
+                        AND HELP PATCH 'EM.
+                    </p>
+                    <p class="sub-detail decrypt-text">
+                        AI-infused Security Engineer, Penetration Tester, Vulnerability Tinkerer & Internet of Things Threat Modeler!
+                    </p>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="section-about">
+                <h2 class="section-heading glitch" data-text="SYS.BIO">SYS.BIO</h2>
+                <div class="bio-content decrypt-text">
+                    <p>Over a decade of experience, primarily focused on VAPT, Architecture Reviews, Security Engineering, DevSecOps, Information Security Compliances, and Vulnerability Research.</p>
+                    <p>Worked with startups and fast-growing companies, leading teams and initiatives to embed security from the ground up.</p>
+                    <p>In my spare time, I enjoy hunting for security bugs and keeping up with the digital evolution and hacker culture. On the whole, I work with anything that revolves around security landscape.</p>
+                </div>
+                <div class="companies-worked" id="career-timeline">
+                    <span class="sys-label">// CAREER_TRAJECTORY:</span>
+                    <span class="company-tag timeline-node glitch-hover" data-text="WINGIFY">WINGIFY</span>
+                    <span class="timeline-arrow">></span>
+                    <span class="company-tag timeline-node glitch-hover" data-text="K7 COMPUTING">K7 COMPUTING</span>
+                    <span class="timeline-arrow">></span>
+                    <span class="company-tag timeline-node glitch-hover" data-text="HUBBLE">HUBBLE</span>
+                    <span class="timeline-arrow">></span>
+                    <span class="company-tag timeline-node glitch-hover" data-text="POSTMAN">POSTMAN</span>
+                    <span class="timeline-arrow">></span>
+                    <span class="company-tag timeline-node glitch-hover" data-text="GOJEK">GOJEK</span>
+                    <span class="timeline-arrow">></span>
+                    <span class="company-tag timeline-node current-node glitch-hover" data-text="TEKION">TEKION</span>
+                </div>
+            </section>
+
+
+            <!-- Fractured Console -->
+            <section id="console" class="section-console">
+                <div class="fractured-terminal">
+                    <div class="term-header">
+                        <span class="term-title decrypt-text">/dev/tty0</span>
+                        <div class="term-actions">
+                            <div class="rect"></div>
+                            <div class="rect"></div>
+                            <div class="rect"></div>
+                        </div>
+                    </div>
+                    <div class="term-body" id="term-output">
+                        <div class="log-line"><span class="user">root@pv-sec:~#</span> ./establish_link.sh</div>
+                        <div class="log-sys success">[OK] SECURE SHELL ESTABLISHED</div>
+                        <div class="log-sys">Awaiting command protocol...</div>
+                    </div>
+                    <div class="term-controls">
+                        <button class="brutal-btn" onclick="runConsole('./list_modules.sh')" data-text="./list_modules.sh">./list_modules.sh</button>
+                        <button class="brutal-btn" onclick="runConsole('clear')" data-text="clear">clear</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recognitions -->
+            <section class="section-recognitions">
+                <h2 class="section-heading glitch" data-text="ACKNOWLEDGED_BY">ACKNOWLEDGED_BY</h2>
+                <div class="hacker-ticker">
+                    <div class="ticker-content">
+                        <span>MICROSOFT</span> //
+                        <span>BLACKBERRY</span> //
+                        <span>BASECAMP</span> //
+                        <span>K7 LABS</span> //
+                        <span>MICROSOFT</span> //
+                        <span>BLACKBERRY</span> //
+                        <span>BASECAMP</span> //
+                        <span>K7 LABS</span>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="footer-brutal">
+                <div class="footer-block">
+                    <div class="decrypt-text">SYSTEM.POWEROFF</div>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        // --- 1. Text Decryption Engine ---
+        const symbols = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;:',.<>?/";
         
-        <section class="hero">
-            <h1>Priyal Viroja</h1>
-            <h2>AI-infused Security Engineer & Vulnerability Tinkerer</h2>
-        </section>
-
-        <section class="bio-intro">
-            Over a decade of experience, primarily focused on **VAPT**, Architecture Reviews, **Security Engineering**, DevSecOps, Information Security Compliances, and **Vulnerability Research**. 
-            <br><br>
-            Worked with startups and fast-growing companies, leading teams and initiatives to embed security from the ground up.
-        </section>
-
-        <section class="expertise-grid">
-            <div class="skill-card">
-                <h3>[ VAPT & RESEARCH ]</h3>
-                <p>Specialized in Vulnerability Research and penetration testing frameworks to identify critical leaks before they become liabilities.</p>
-            </div>
-            <div class="skill-card">
-                <h3>[ ARCHITECTURE & DEVSEC]</h3>
-                <p>Embedding security into the lifecycle: Architecture reviews, DevSecOps integration, and Compliance engineering for fast-growing startups.</p>
-            </div>
-            <div class="skill-card">
-                <h3>[ IoT THREAT MODELING ]</h3>
-                <p>Threat modeling for the Internet of Things (IoT) landscape, ensuring connected devices stay secure against remote exploitation.</p>
-            </div>
-        </section>
-
-        <section class="ticker-area">
-             <div class="word" id="status-tracker"></div>
-        </section>
-
-        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 4rem 0; width: 80%;">
-
-        <section class="Actions">
-            <div class="links-footer">
-                <a href="https://twitter.com/priyalviroja" target="_blank" class="Btn">TWITTER</a>
-                <a href="https://www.linkedin.com/pub/priyal-viroja/64/490/a25" target="_blank" class="Btn">LINKEDIN</a>
-                <a href="https://github.com/priyalviroja/" target="_blank" class="Btn">GITHUB_REPOSITORYS</a>
-            </div>
-        </section>
-
-        <footer>
-            <p>Authenticated & Built with 🧡 by <a href="https://github.com/priyalviroja/" style="color: var(--accent-primary);">Priyal Viroja</a></p>
-        </footer>
-
-    </main>
-
-    <script type="text/javascript">
-        // Preservation of your unique Ticker logic
-        function Ticker(elem) {
-            elem.lettering();
-            this.done = false;
-            this.cycleCount = 5;
-            this.cycleCurrent = 0;
-            this.chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()-_=+{}|[]\\;\':()"'.split('');
-            this.charsCount = this.chars.length;
-            this.original = elem.html();
-            this.letters = elem.find('span');
-            this.letterCount = this.letters.length;
-            this.letterCurrent = 0;
-
-            this.letters.each(function () {
-                var $this = $(this);
-                $this.attr('data-orig', $this.text());
-                $this.text('-');
-            });
+        function decryptElement(el) {
+            if (el.dataset.decrypted === "true") return;
+            el.dataset.decrypted = "true";
+            
+            const originalText = el.textContent.trim();
+            if(!el.dataset.original) el.dataset.original = originalText;
+            
+            let iterations = 0;
+            const maxIterations = originalText.length;
+            
+            const interval = setInterval(() => {
+                el.textContent = originalText.split("")
+                    .map((char, i) => {
+                        if (i < iterations) return originalText[i];
+                        if (char === " ") return " ";
+                        return symbols[Math.floor(Math.random() * symbols.length)];
+                    })
+                    .join("");
+                
+                if (iterations >= maxIterations) {
+                    clearInterval(interval);
+                    el.textContent = originalText;
+                }
+                iterations += 1/2; // speed
+            }, 30);
         }
 
-        Ticker.prototype.getChar = function () {
-            return this.chars[ Math.floor(Math.random() * this.charsCount) ];
-        };
-
-        Ticker.prototype.reset = function () {
-            this.done = false;
-            this.cycleCurrent = 0;
-            this.letterCurrent = 0;
-            this.letters.each(function () {
-                var $this = $(this);
-                $this.text($this.attr('data-orig'));
-                $this.removeClass('done');
-            });
-            this.loop();
-        };
-
-        Ticker.prototype.loop = function () {
-           var self = this;
-
-            this.letters.each(function (index, elem) {
-                var $elem = $(elem);
-                if (index >= self.letterCurrent) {
-                    if ($elem.text() !== ' ') {
-                        $elem.text(self.getChar());
-                        $elem.css('opacity', Math.random()));
-                       }
+        // Use Intersection Observer to trigger decryption
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    decryptElement(entry.target);
                 }
             });
+        }, { threshold: 0.1 });
 
-            if (this.cycleCurrent < this.cycleCount) {
-                this.cycleCurrent++;
-            } else if (this.letterCurrent < this.letterCount) {
-                var currLetter = this.letters.eq(this.letterCurrent);
-                this.cycleCurrent = 0;
-                currLetter.text(currLetter.attr('data-orig')).css('opacity', 1).addClass('done');
-                this.letterCurrent++;
-            } else {
-                this.done = true;
-            }
+        document.querySelectorAll('.decrypt-text').forEach(el => io.observe(el));
 
-            if (!this.done) {
-                requestAnimationFrame(function () {
-                    self.loop();
+        // --- Live Checklist Animation ---
+        const checkItems = document.querySelectorAll('.check-item');
+        const checklistObserver = new IntersectionObserver((entries) => {
+            if(entries[0].isIntersecting) {
+                checkItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        const box = item.querySelector('.check-box');
+                        box.textContent = '[OK]';
+                        box.classList.add('checked-success');
+                        item.classList.add('item-completed');
+                    }, index * 150); // 150ms delay between checks for rapid execution
                 });
-            } else {
-                var self = this;
-                setTimeout(function () {
-                    self.reset();
-                }, 750);
+                checklistObserver.disconnect();
             }
+        }, { threshold: 0.5 });
+        if(document.getElementById('auto-checklist')) {
+            checklistObserver.observe(document.getElementById('auto-checklist'));
+        }
+
+        // --- Career Timeline Animation ---
+        const timelineElements = document.querySelectorAll('#career-timeline > span');
+        const timelineObserver = new IntersectionObserver((entries) => {
+            if(entries[0].isIntersecting) {
+                // Ignore the sys-label, animate nodes and arrows
+                let delay = 0;
+                timelineElements.forEach((el) => {
+                    if (el.classList.contains('timeline-node') || el.classList.contains('timeline-arrow')) {
+                        setTimeout(() => {
+                            el.classList.add('lit-up');
+                        }, delay);
+                        delay += 300; // 300ms between each node/arrow lighting up
+                    }
+                });
+                timelineObserver.disconnect();
+            }
+        }, { threshold: 0.8 });
+        
+        if(document.getElementById('career-timeline')) {
+            timelineObserver.observe(document.getElementById('career-timeline'));
+        }
+
+
+        // --- 2. Corrupted Memory Canvas Background ---
+        const canvas = document.getElementById('corruption-canvas');
+        const ctx = canvas.getContext('2d');
+        
+        let width, height;
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        const fontSize = 14;
+        const columns = Math.floor(width / fontSize) + 1;
+        const rows = Math.floor(height / fontSize) + 1;
+        
+        let mouseX = width / 2;
+        let mouseY = height / 2;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        // Create random blocks of memory addresses
+        function drawCorruption() {
+            ctx.fillStyle = 'rgba(5, 5, 5, 0.2)'; // fade trail
+            ctx.fillRect(0, 0, width, height);
+
+            ctx.font = `${fontSize}px 'JetBrains Mono'`;
+            
+            // Draw random hex codes occasionally
+            for(let i=0; i<30; i++) {
+                const x = Math.floor(Math.random() * columns) * fontSize;
+                const y = Math.floor(Math.random() * rows) * fontSize;
+                
+                // Distance to mouse for reactivity
+                const dx = x - mouseX;
+                const dy = y - mouseY;
+                const dist = Math.sqrt(dx*dx + dy*dy);
+                
+                if (dist < 150) {
+                    // Near mouse: bright magenta/lime glitch
+                    ctx.fillStyle = Math.random() > 0.5 ? '#FF00FF' : '#CCFF00';
+                    const hex = '0x' + Math.floor(Math.random()*16777215).toString(16).toUpperCase().padStart(6, '0');
+                    ctx.fillText(hex, x, y);
+                } else if (Math.random() < 0.05) {
+                    // Random background noise: dark cyan or grey
+                    ctx.fillStyle = Math.random() > 0.5 ? 'rgba(0, 255, 255, 0.15)' : 'rgba(255, 255, 255, 0.05)';
+                    const bin = Math.random() > 0.5 ? '1' : '0';
+                    ctx.fillText(bin, x, y);
+                }
+            }
+            requestAnimationFrame(drawCorruption);
+        }
+        
+        if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            drawCorruption();
+        } else {
+            ctx.fillStyle = '#050505';
+            ctx.fillRect(0,0,width,height);
+        }
+
+        // --- 3. Fractured Terminal Logic ---
+        const termOutput = document.getElementById('term-output');
+        let isTermRunning = false;
+
+        const cmdData = {
+            './list_modules.sh': [
+                { type: 'log-sys', text: 'Scanning expertise domains...' },
+                { type: 'log-sys', text: '[+] Select a module to drill down:' },
+                { type: 'log-sys', text: '  -> <span class="term-link" onclick="runConsole(\'inspect Cloud_Security\')">Cloud_Security</span>' },
+                { type: 'log-sys', text: '  -> <span class="term-link" onclick="runConsole(\'inspect Product_Security\')">Product_Security</span>' },
+                { type: 'log-sys', text: '  -> <span class="term-link" onclick="runConsole(\'inspect Security_Engineering\')">Security_Engineering</span>' },
+                { type: 'log-sys', text: '  -> <span class="term-link" onclick="runConsole(\'inspect Red_Teaming\')">Red_Teaming</span>' },
+                { type: 'log-sys', text: '  -> <span class="term-link" onclick="runConsole(\'inspect AI_Security\')">AI_Security</span>' },
+                { type: 'log-sys', text: '  -> <span class="term-link" onclick="runConsole(\'inspect IoT_Security\')">IoT_Security</span>' }
+            ],
+            'inspect Cloud_Security': [
+                { type: 'log-sys', text: '[*] Extracting Cloud Security capabilities...' },
+                { type: 'log-sys success', text: '  - CNAPP Effective Implementation' },
+                { type: 'log-sys success', text: '  - AWS Well-Architected Reviews' },
+                { type: 'log-sys success', text: '  - Cloud Posture Correction (CSPM)' },
+                { type: 'log-sys success', text: '  - Root Cause Analysis & IR' },
+                { type: 'log-sys success', text: '  - Identity & Access Management Hardening' }
+            ],
+            'inspect Product_Security': [
+                { type: 'log-sys', text: '[*] Extracting Product Security capabilities...' },
+                { type: 'log-sys success', text: '  - Secure SDLC Integration' },
+                { type: 'log-sys success', text: '  - Threat Modeling for Microservices' },
+                { type: 'log-sys success', text: '  - Deep Manual VAPT & Logic Flaw Hunting' },
+                { type: 'log-sys success', text: '  - Security Architecture Reviews' },
+                { type: 'log-sys success', text: '  - Developer Security Champion Programs' }
+            ],
+            'inspect Security_Engineering': [
+                { type: 'log-sys', text: '[*] Extracting Security Engineering capabilities...' },
+                { type: 'log-sys success', text: '  - DevSecOps Pipeline Building' },
+                { type: 'log-sys success', text: '  - SAST/DAST/SCA Automation' },
+                { type: 'log-sys success', text: '  - Custom Security Tooling & Scripting' },
+                { type: 'log-sys success', text: '  - WAF & Edge Security Tuning' },
+                { type: 'log-sys success', text: '  - Secrets Management Deployment' }
+            ],
+            'inspect Red_Teaming': [
+                { type: 'log-sys', text: '[*] Extracting Red Teaming capabilities...' },
+                { type: 'log-sys success', text: '  - Assume Breach Simulations' },
+                { type: 'log-sys success', text: '  - APT Emulation & Evasion' },
+                { type: 'log-sys success', text: '  - Lateral Movement & Privilege Escalation' },
+                { type: 'log-sys success', text: '  - Custom Exploit Development' },
+                { type: 'log-sys success', text: '  - Zero-Day Vulnerability Research' }
+            ],
+            'inspect AI_Security': [
+                { type: 'log-sys', text: '[*] Extracting AI Security capabilities...' },
+                { type: 'log-sys success', text: '  - LLM Prompt Injection & Jailbreak Testing' },
+                { type: 'log-sys success', text: '  - Model Inversion & Data Extraction Analysis' },
+                { type: 'log-sys success', text: '  - Securing ML Training Pipelines' },
+                { type: 'log-sys success', text: '  - AI Agent Behavioral Bounds Testing' }
+            ],
+            'inspect IoT_Security': [
+                { type: 'log-sys', text: '[*] Extracting IoT Security capabilities...' },
+                { type: 'log-sys success', text: '  - Firmware Dumping & Reverse Engineering' },
+                { type: 'log-sys success', text: '  - Hardware Protocol Analysis (UART/SPI/JTAG)' },
+                { type: 'log-sys success', text: '  - Wireless Signal Interception (BLE/Zigbee)' },
+                { type: 'log-sys success', text: '  - Embedded Logic Flaw Hunting' }
+            ]
         };
 
-        $(document).ready(function() {
-          var $words = $('#status-tracker');
-          // Initialize with a rotating status message
-          $words.html('<span style="color:#1ff042">SYSTEM_ACTIVE [AUTHENTICATED]</span>');
-          
-          $words.each(function () {
-            var $this = $(this),
-                    ticker = new Ticker($this).reset();
-            $this.data('ticker', ticker);
-          });
-        });
+        async function runConsole(cmd) {
+            if(isTermRunning) return;
+            if(cmd === 'clear') {
+                termOutput.innerHTML = '<div class="log-line"><span class="user">root@pv-sec:~#</span></div>';
+                termOutput.className = 'term-body'; // reset panic
+                return;
+            }
+            
+            isTermRunning = true;
+            termOutput.innerHTML += `<div class="log-line"><span class="user">root@pv-sec:~#</span> ${cmd}</div>`;
+            
+            if(cmd === 'panic') {
+                termOutput.classList.add('panic-mode');
+                document.body.classList.add('global-panic');
+                setTimeout(() => document.body.classList.remove('global-panic'), 500);
+            } else {
+                termOutput.classList.remove('panic-mode');
+            }
+
+            const lines = cmdData[cmd];
+            for (let line of lines) {
+                await new Promise(r => setTimeout(r, 300));
+                termOutput.innerHTML += `<div class="${line.type}">${line.text}</div>`;
+                termOutput.scrollTop = termOutput.scrollHeight;
+            }
+            isTermRunning = false;
+        }
 
     </script>
 </body>
