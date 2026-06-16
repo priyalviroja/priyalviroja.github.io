@@ -78,37 +78,49 @@
                     <p>In my spare time, I enjoy hunting for security bugs and keeping up with the digital evolution and hacker culture. On the whole, I work with anything that revolves around security landscape.</p>
                 </div>
                 <div class="career-trajectory" id="career-timeline">
-                    <span class="sys-label">// CAREER_TRAJECTORY:</span>
-                    <div class="trajectory-grid">
-                        <div class="trajectory-entry timeline-node">
-                            <span class="company-tag glitch-hover" data-text="WINGIFY">WINGIFY</span>
-                            <span class="entry-tagline">internship — breaking SaaS & building scanners</span>
+                    <div class="traj-header">
+                        <span class="traj-prompt">root@pv-sec:~#</span> cat /var/log/career.log
+                    </div>
+                    <div class="traj-log">
+                        <div class="traj-entry" data-index="0">
+                            <span class="traj-pid">[PID 001]</span>
+                            <span class="traj-company">WINGIFY</span>
+                            <span class="traj-status status-exited">EXIT_0</span>
+                            <div class="traj-desc">internship — breaking SaaS & building scanners</div>
                         </div>
-                        <span class="timeline-arrow">›</span>
-                        <div class="trajectory-entry timeline-node">
-                            <span class="company-tag glitch-hover" data-text="K7 COMPUTING">K7 COMPUTING</span>
-                            <span class="entry-tagline">pentesting, web security research, malware world discovery</span>
+                        <div class="traj-entry" data-index="1">
+                            <span class="traj-pid">[PID 002]</span>
+                            <span class="traj-company">K7_COMPUTING</span>
+                            <span class="traj-status status-exited">EXIT_0</span>
+                            <div class="traj-desc">pentesting · web security research · malware world discovery</div>
                         </div>
-                        <span class="timeline-arrow">›</span>
-                        <div class="trajectory-entry timeline-node">
-                            <span class="company-tag glitch-hover" data-text="HUBBLE">HUBBLE</span>
-                            <span class="entry-tagline">IoT smart baby monitors — tinkering & fixing</span>
+                        <div class="traj-entry" data-index="2">
+                            <span class="traj-pid">[PID 003]</span>
+                            <span class="traj-company">HUBBLE_CONNECTED</span>
+                            <span class="traj-status status-exited">EXIT_0</span>
+                            <div class="traj-desc">IoT smart baby monitors — tinkering & fixing</div>
                         </div>
-                        <span class="timeline-arrow">›</span>
-                        <div class="trajectory-entry timeline-node">
-                            <span class="company-tag glitch-hover" data-text="POSTMAN">POSTMAN</span>
-                            <span class="entry-tagline">all things security</span>
+                        <div class="traj-entry" data-index="3">
+                            <span class="traj-pid">[PID 004]</span>
+                            <span class="traj-company">POSTMAN</span>
+                            <span class="traj-status status-exited">EXIT_0</span>
+                            <div class="traj-desc">all things security</div>
                         </div>
-                        <span class="timeline-arrow">›</span>
-                        <div class="trajectory-entry timeline-node">
-                            <span class="company-tag glitch-hover" data-text="GOJEK">GOJEK</span>
-                            <span class="entry-tagline">software supply chain & infra security</span>
+                        <div class="traj-entry" data-index="4">
+                            <span class="traj-pid">[PID 005]</span>
+                            <span class="traj-company">GOJEK</span>
+                            <span class="traj-status status-exited">EXIT_0</span>
+                            <div class="traj-desc">software supply chain & infra security</div>
                         </div>
-                        <span class="timeline-arrow">›</span>
-                        <div class="trajectory-entry timeline-node current-node">
-                            <span class="company-tag glitch-hover" data-text="TEKION">TEKION</span>
-                            <span class="entry-tagline">architecting security for scale & growth</span>
+                        <div class="traj-entry active-process" data-index="5">
+                            <span class="traj-pid">[PID 006]</span>
+                            <span class="traj-company">TEKION</span>
+                            <span class="traj-status status-active">ACTIVE</span>
+                            <div class="traj-desc">architecting security for scale & growth</div>
                         </div>
+                    </div>
+                    <div class="traj-footer">
+                        <span class="traj-cursor">█</span> 6 processes loaded. 1 active.
                     </div>
                 </div>
             </section>
@@ -218,25 +230,32 @@
             checklistObserver.observe(document.getElementById('auto-checklist'));
         }
 
-        // --- Career Timeline Animation ---
-        const timelineElements = document.querySelectorAll('.trajectory-grid > *');
-        const timelineObserver = new IntersectionObserver((entries) => {
+        // --- Career Trajectory Boot Sequence ---
+        const trajEntries = document.querySelectorAll('.traj-entry');
+        const trajFooter = document.querySelector('.traj-footer');
+        const trajHeader = document.querySelector('.traj-header');
+        const trajObserver = new IntersectionObserver((entries) => {
             if(entries[0].isIntersecting) {
-                let delay = 0;
-                timelineElements.forEach((el) => {
-                    if (el.classList.contains('timeline-node') || el.classList.contains('timeline-arrow')) {
-                        setTimeout(() => {
-                            el.classList.add('lit-up');
-                        }, delay);
-                        delay += 300;
-                    }
+                // Show header first
+                if (trajHeader) trajHeader.classList.add('booted');
+                // Boot each entry sequentially
+                trajEntries.forEach((entry, i) => {
+                    setTimeout(() => {
+                        entry.classList.add('booted');
+                    }, 400 + i * 350);
                 });
-                timelineObserver.disconnect();
+                // Show footer after all entries
+                if (trajFooter) {
+                    setTimeout(() => {
+                        trajFooter.classList.add('booted');
+                    }, 400 + trajEntries.length * 350 + 200);
+                }
+                trajObserver.disconnect();
             }
-        }, { threshold: 0.5 });
+        }, { threshold: 0.3 });
         
         if(document.getElementById('career-timeline')) {
-            timelineObserver.observe(document.getElementById('career-timeline'));
+            trajObserver.observe(document.getElementById('career-timeline'));
         }
 
         // --- Research Grid Animation ---
