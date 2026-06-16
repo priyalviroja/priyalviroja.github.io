@@ -577,38 +577,51 @@ html {
     text-align: left;
 }
 
-.research-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
+.scatter-field {
+    position: relative;
+    min-height: 350px;
     margin-top: 2rem;
 }
 
-.research-node {
-    border: 1px solid var(--accent-magenta);
+.scatter-name {
+    position: absolute;
+    left: var(--dx, 0%);
+    top: var(--dy, 0%);
+    transform: rotate(var(--rot, 0deg)) scale(0.5);
+    font-family: var(--font-head);
+    font-weight: 800;
     color: var(--accent-magenta);
-    padding: 1.5rem;
-    text-align: center;
-    font-weight: 700;
-    font-size: 1.2rem;
-    background: rgba(255, 0, 255, 0.05);
-    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
-    transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     opacity: 0;
-    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), text-shadow 0.3s;
+    cursor: default;
+    white-space: nowrap;
 }
 
-.research-node.revealed {
+.scatter-name.revealed {
     opacity: 1;
-    transform: translateY(0);
+    transform: rotate(var(--rot, 0deg)) scale(1);
 }
 
-.research-node:hover {
-    background: var(--accent-magenta);
-    color: #000;
-    box-shadow: 0 0 20px var(--accent-magenta);
-    transform: translateY(-5px);
+.scatter-name:hover {
+    color: var(--fg-core);
+    text-shadow: 0 0 30px var(--accent-magenta), 0 0 60px rgba(255, 0, 255, 0.3);
+    z-index: 5;
 }
+
+/* Size variants */
+.sz-xs { font-size: clamp(0.7rem, 1.5vw, 0.9rem); opacity: 0; }
+.sz-sm { font-size: clamp(0.9rem, 2vw, 1.2rem); }
+.sz-md { font-size: clamp(1.2rem, 2.5vw, 1.6rem); }
+.sz-lg { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
+.sz-xl { font-size: clamp(2.2rem, 5vw, 3.5rem); }
+
+.sz-xs.revealed { opacity: 0.5; }
+.sz-sm.revealed { opacity: 0.7; }
+.sz-md.revealed { opacity: 0.8; }
+.sz-lg.revealed { opacity: 0.9; }
+.sz-xl.revealed { opacity: 1; }
 
 /* --- Footer --- */
 .footer-brutal {

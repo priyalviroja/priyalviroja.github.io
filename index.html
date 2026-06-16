@@ -153,11 +153,14 @@
             <section class="section-recognitions">
                 <h2 class="section-heading glitch" data-text="CURIOSITY_DRIVEN_RESEARCH">CURIOSITY_DRIVEN_RESEARCH</h2>
                 <p class="sys-label" style="margin-bottom: 2rem;">// EXPLORING SYSTEMS OUT OF CURIOSITY RESULTED IN RESPONSIBLE DISCLOSURES AT:</p>
-                <div class="research-grid" id="research-grid-animate">
-                    <div class="research-node">MICROSOFT</div>
-                    <div class="research-node">BLACKBERRY</div>
-                    <div class="research-node">BASECAMP</div>
-                    <div class="research-node">K7 LABS</div>
+                <div class="scatter-field" id="research-grid-animate">
+                    <span class="scatter-name sz-xl" style="--dx:-5%;--dy:10%;--rot:-3deg">GOOGLE</span>
+                    <span class="scatter-name sz-sm" style="--dx:55%;--dy:0%;--rot:2deg">GLIPH</span>
+                    <span class="scatter-name sz-lg" style="--dx:30%;--dy:25%;--rot:-1deg">YAHOO</span>
+                    <span class="scatter-name sz-xs" style="--dx:70%;--dy:35%;--rot:4deg">ENGINE_YARD</span>
+                    <span class="scatter-name sz-md" style="--dx:5%;--dy:55%;--rot:-2deg">NOKIA</span>
+                    <span class="scatter-name sz-lg" style="--dx:50%;--dy:60%;--rot:1deg">FACEBOOK</span>
+                    <span class="scatter-name sz-sm" style="--dx:25%;--dy:75%;--rot:-4deg">iFIXIT</span>
                 </div>
             </section>
 
@@ -258,21 +261,21 @@
             trajObserver.observe(document.getElementById('career-timeline'));
         }
 
-        // --- Research Grid Animation ---
-        const researchNodes = document.querySelectorAll('.research-node');
-        const researchObserver = new IntersectionObserver((entries) => {
+        // --- Scatter Field Animation ---
+        const scatterNames = document.querySelectorAll('.scatter-name');
+        const scatterObserver = new IntersectionObserver((entries) => {
             if(entries[0].isIntersecting) {
-                researchNodes.forEach((node, index) => {
+                scatterNames.forEach((node, index) => {
                     setTimeout(() => {
                         node.classList.add('revealed');
-                    }, index * 150);
+                    }, index * 200);
                 });
-                researchObserver.disconnect();
+                scatterObserver.disconnect();
             }
-        }, { threshold: 0.5 });
+        }, { threshold: 0.3 });
         
         if(document.getElementById('research-grid-animate')) {
-            researchObserver.observe(document.getElementById('research-grid-animate'));
+            scatterObserver.observe(document.getElementById('research-grid-animate'));
         }
 
 
