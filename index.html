@@ -119,18 +119,13 @@
 
             <!-- Recognitions -->
             <section class="section-recognitions">
-                <h2 class="section-heading glitch" data-text="ACKNOWLEDGED_BY">ACKNOWLEDGED_BY</h2>
-                <div class="hacker-ticker">
-                    <div class="ticker-content">
-                        <span>MICROSOFT</span> //
-                        <span>BLACKBERRY</span> //
-                        <span>BASECAMP</span> //
-                        <span>K7 LABS</span> //
-                        <span>MICROSOFT</span> //
-                        <span>BLACKBERRY</span> //
-                        <span>BASECAMP</span> //
-                        <span>K7 LABS</span>
-                    </div>
+                <h2 class="section-heading glitch" data-text="CURIOSITY_DRIVEN_RESEARCH">CURIOSITY_DRIVEN_RESEARCH</h2>
+                <p class="sys-label" style="margin-bottom: 2rem;">// EXPLORING SYSTEMS OUT OF CURIOSITY RESULTED IN RESPONSIBLE DISCLOSURES AT:</p>
+                <div class="research-grid" id="research-grid-animate">
+                    <div class="research-node">MICROSOFT</div>
+                    <div class="research-node">BLACKBERRY</div>
+                    <div class="research-node">BASECAMP</div>
+                    <div class="research-node">K7 LABS</div>
                 </div>
             </section>
 
@@ -214,7 +209,7 @@
                         setTimeout(() => {
                             el.classList.add('lit-up');
                         }, delay);
-                        delay += 300; // 300ms between each node/arrow lighting up
+                        delay += 250; // 250ms between each node/arrow lighting up
                     }
                 });
                 timelineObserver.disconnect();
@@ -223,6 +218,23 @@
         
         if(document.getElementById('career-timeline')) {
             timelineObserver.observe(document.getElementById('career-timeline'));
+        }
+
+        // --- Research Grid Animation ---
+        const researchNodes = document.querySelectorAll('.research-node');
+        const researchObserver = new IntersectionObserver((entries) => {
+            if(entries[0].isIntersecting) {
+                researchNodes.forEach((node, index) => {
+                    setTimeout(() => {
+                        node.classList.add('revealed');
+                    }, index * 150);
+                });
+                researchObserver.disconnect();
+            }
+        }, { threshold: 0.5 });
+        
+        if(document.getElementById('research-grid-animate')) {
+            researchObserver.observe(document.getElementById('research-grid-animate'));
         }
 
 
